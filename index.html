@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="assets/style.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <title>To-do</title>
+</head>
+<body>
+  
+  <div id="app" class="container">
+
+    <div class="logo"><img src="assets/img/logo.png" alt="Logo Boolean"></div>
+
+
+    <div class="new_to_do">
+      <h4 v-if="(alertActive)">
+        Attenzione inserire un testo più lungo!
+      </h4>
+      <div class="input_container">
+        <input v-model="str_to_do" @keyUp.enter="add_to_do" type="text" placeholder="New to do">
+        <button @click="add_to_do">Aggiungi</button>
+      </div>
+    </div>
+    <div class="to_do_container">
+      <ul>
+        <li 
+        v-for="(to_do, index) in todolist"
+        :class="(to_do.checked == true) ? 'checked' : null"
+        @click="(to_do.checked) = !to_do.checked "
+        >
+          <span>{{to_do.to_do}}</span>
+          <i 
+          class="fas fa-times"
+          @click.stop="remove_to_do(index)"
+          ></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+.container{
+  width:70%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: aqua;
+}
+.logo{
+  width:60%;
+  text-align: center;
+  margin:0 auto;
+}
+.logo img{
+  width:60%;
+  max-width: 600px;
+  margin-top: 30px;
+}
+.new_to_do{
+  margin-top: 40px;
+}
+.new_to_do h4{
+  text-align: center;
+  color:red;
+  font-size: 25px;
+}
+.input_container{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+.input_container input{
+  margin-right: 20px;
+  height: 30px;
+  width:200px;
+  text-align: center;
+}
+.input_container button{
+  margin-left: 20px;
+  width:100px;
+  height: 30px;
+  cursor: pointer;
+}
+.to_do_container{
+  background: #F5F7F7;
+  border-radius: 15px;
+  margin:30px auto;
+  width:70%;
+  padding:30px 20px
+}
+.to_do_container ul{
+  list-style: none;
+}
+.to_do_container ul li {
+  display: flex;
+  align-items: center;
+  padding:0 20px;
+  justify-content: space-between;
+  height: 30px;
+  border-bottom: 1px solid grey;
+  font-size: 20px;
+}
+.to_do_container ul li:hover{
+  background-color:white ;
+}
+.to_do_container ul li.checked{
+  color:grey;
+  text-decoration: line-through;
+}
+.to_do_container ul li:last-child{
+  border:0;
+}
+.to_do_container ul li .fa-times:hover{
+  color:red;
+  cursor:pointer
+}
